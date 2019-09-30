@@ -18,7 +18,7 @@ public protocol Saga {
     associatedtype SagaStoreStateType: StateType
     
     static var name: String { get }
-    static var type: SagaType { get }
+    static var sagaType: SagaType { get }
     
     // Notify this Saga's SagaModule that the action has finished all its work by calling this callback
     // in your Saga's action.

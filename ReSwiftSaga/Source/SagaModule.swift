@@ -22,10 +22,10 @@ open class SagaModule<SagaStoreType: StoreType> {
         self.store = store
     }
     
-    public func dispatch<T: Saga where T.SagaStoreStateType == SagaStoreType.State>(_ saga: T) {
+    public func dispatch<T: Saga>(_ saga: T) where T.SagaStoreStateType == SagaStoreType.State {
         self.cleanUpSagas(withName: T.name)
         
-        switch T.type {
+        switch T.sagaType {
         case .takeFirst:
             takeFirst(saga: saga)
         case .takeEvery:
@@ -59,7 +59,7 @@ open class SagaModule<SagaStoreType: StoreType> {
         self.tasks.removeAll()
     }
     
-    private func takeFirst<T: Saga where T.SagaStoreStateType == SagaStoreType.State>(saga: T) {
+    private func takeFirst<T: Saga>(saga: T) where T.SagaStoreStateType == SagaStoreType.State {
         if let currentTask = self.tasks[T.name]?.first, currentTask.finished == false {
             return // Ignoring the task if there is an ongoing takeFirst task for this Saga
         }
@@ -70,7 +70,7 @@ open class SagaModule<SagaStoreType: StoreType> {
         task.workItem.perform()
     }
     
-    private func takeEvery<T: Saga where T.SagaStoreStateType == SagaStoreType.State>(saga: T) {
+    private func takeEvery<T: Saga>(saga: T) where T.SagaStoreStateType == SagaStoreType.State {
         let task = self.task(forSaga: saga)
         if self.tasks[T.name] != nil {
             self.tasks[T.name]!.append(task)
@@ -81,7 +81,7 @@ open class SagaModule<SagaStoreType: StoreType> {
         task.workItem.perform()
     }
     
-    private func takeLatest<T: Saga where T.SagaStoreStateType == SagaStoreType.State>(saga: T) {
+    private func takeLatest<T: Saga>(saga: T) where T.SagaStoreStateType == SagaStoreType.State {
         if let currentTask = self.tasks[T.name]?.first, currentTask.finished == false {
             currentTask.finished = true
             currentTask.workItem.cancel()
@@ -93,7 +93,7 @@ open class SagaModule<SagaStoreType: StoreType> {
         task.workItem.perform()
     }
     
-    private func task<T: Saga where T.SagaStoreStateType == SagaStoreType.State>(forSaga saga: T) -> SagaModuleTask {
+    private func task<T: Saga>(forSaga saga: T) -> SagaModuleTask where T.SagaStoreStateType == SagaStoreType.State {
         let task = SagaModuleTask()
         
         task.workItem = DispatchWorkItem { [weak self, weak task] in

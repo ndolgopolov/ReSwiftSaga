@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		053F608A5002C539B8223569 /* Pods_ReSwiftSaga.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C99963932022F7250F238843 /* Pods_ReSwiftSaga.framework */; };
 		B175FC6C1DD3B4830081DFBD /* ReSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B175FC6B1DD3B4830081DFBD /* ReSwift.framework */; };
 		B175FC6E1DD3B4A80081DFBD /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = B175FC6D1DD3B4A80081DFBD /* Cartfile */; };
 		B177344A1DD2A96500A23E4D /* ReSwiftSaga.h in Headers */ = {isa = PBXBuildFile; fileRef = B17734481DD2A96500A23E4D /* ReSwiftSaga.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		23A4D28C70F92CACF88E5AA1 /* Pods-ReSwiftSaga.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReSwiftSaga.release.xcconfig"; path = "Pods/Target Support Files/Pods-ReSwiftSaga/Pods-ReSwiftSaga.release.xcconfig"; sourceTree = "<group>"; };
 		B175FC6B1DD3B4830081DFBD /* ReSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReSwift.framework; path = Carthage/Build/iOS/ReSwift.framework; sourceTree = "<group>"; };
 		B175FC6D1DD3B4A80081DFBD /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = SOURCE_ROOT; };
 		B17734451DD2A96500A23E4D /* ReSwiftSaga.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ReSwiftSaga.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -22,6 +24,8 @@
 		B17734491DD2A96500A23E4D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B17734511DD2A9A300A23E4D /* Saga.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Saga.swift; path = Source/Saga.swift; sourceTree = "<group>"; };
 		B17734531DD2A9B500A23E4D /* SagaModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SagaModule.swift; path = Source/SagaModule.swift; sourceTree = "<group>"; };
+		BE1ECC7FA2628450095C80DB /* Pods-ReSwiftSaga.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReSwiftSaga.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ReSwiftSaga/Pods-ReSwiftSaga.debug.xcconfig"; sourceTree = "<group>"; };
+		C99963932022F7250F238843 /* Pods_ReSwiftSaga.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReSwiftSaga.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -30,16 +34,27 @@
 			buildActionMask = 2147483647;
 			files = (
 				B175FC6C1DD3B4830081DFBD /* ReSwift.framework in Frameworks */,
+				053F608A5002C539B8223569 /* Pods_ReSwiftSaga.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3ED415A90E824A7466CC107C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BE1ECC7FA2628450095C80DB /* Pods-ReSwiftSaga.debug.xcconfig */,
+				23A4D28C70F92CACF88E5AA1 /* Pods-ReSwiftSaga.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		B175FC6A1DD3B4830081DFBD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				B175FC6B1DD3B4830081DFBD /* ReSwift.framework */,
+				C99963932022F7250F238843 /* Pods_ReSwiftSaga.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -50,6 +65,7 @@
 				B17734471DD2A96500A23E4D /* ReSwiftSaga */,
 				B175FC6A1DD3B4830081DFBD /* Frameworks */,
 				B17734461DD2A96500A23E4D /* Products */,
+				3ED415A90E824A7466CC107C /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,6 +115,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B177344D1DD2A96500A23E4D /* Build configuration list for PBXNativeTarget "ReSwiftSaga" */;
 			buildPhases = (
+				CF5465F91F7CAF0206100757 /* [CP] Check Pods Manifest.lock */,
 				B17734401DD2A96500A23E4D /* Sources */,
 				B17734411DD2A96500A23E4D /* Frameworks */,
 				B17734421DD2A96500A23E4D /* Headers */,
@@ -135,6 +152,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 			);
 			mainGroup = B177343B1DD2A96500A23E4D;
@@ -157,6 +175,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		CF5465F91F7CAF0206100757 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ReSwiftSaga-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		B17734401DD2A96500A23E4D /* Sources */ = {
@@ -218,6 +257,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -263,6 +303,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -272,6 +313,7 @@
 		};
 		B177344E1DD2A96500A23E4D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BE1ECC7FA2628450095C80DB /* Pods-ReSwiftSaga.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
@@ -292,13 +334,14 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
 		B177344F1DD2A96500A23E4D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 23A4D28C70F92CACF88E5AA1 /* Pods-ReSwiftSaga.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
@@ -318,7 +361,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.tehjord.ReSwiftSaga;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
